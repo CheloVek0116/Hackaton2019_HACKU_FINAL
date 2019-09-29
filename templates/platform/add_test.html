@@ -1,0 +1,18 @@
+{% extends "platform/base_platform.html" %}
+
+{% block title %}
+    добавить тест
+{% endblock title %}
+
+{% block content %}
+    добавить тест
+	
+	<div>
+		<form action="" method='post'>
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit">send</button>
+		</form>
+
+	</div>
+{% endblock content %}

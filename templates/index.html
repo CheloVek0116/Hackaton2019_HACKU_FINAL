@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="{% static 'css/reset.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <title>HackU</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="content">
+                <small class="header-logo">HackU</small> <button class="header-close">&times;</button>
+            </div>
+        </div>
+    </header>
+    <section class="welcome-window _style1">
+        <div class="container">
+            <div class="box">
+                <div class="content_style1">
+                    <h1 class="welcome-window-title">Добро пожаловать</h1>
+                    <h2 class="welcome-window-subtitle">
+                        Меня зовут Наденька! Сейчас я расскажу как работает эта платформа.
+                    </h2>
+                    <button class="welcome-window-btn" onclick="welcomee()">Давай</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="welcome-window _style2">
+        <div class="container">
+            <div class="box">
+                <div class="content_style2">
+                    <h1 class="welcome-window-title">Начнем</h1>
+                    <h2 class="welcome-window-subtitle">
+                        Предлагаю узнаьб друг друга получше:)<br>
+                        Мой психотип - НАСТАВНИК. А твой?<br>
+                        Давай сейчас пройдем мааааленький тест.
+                    </h2>
+                    <button class="welcome-window-btn">Давай</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'js/jqvery-min.js' %}"></script> 
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <script>
+        welcome = document.querySelector("section._style1")
+        function welcomee() {
+            welcome.style.display = "none";
+        }
+    </script>
+</body>
+</html>

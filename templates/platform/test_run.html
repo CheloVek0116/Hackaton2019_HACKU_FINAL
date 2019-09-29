@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% if user in test.respondents.all %}
+	   вы уже прохходили данный тест {{ user.username }}
+	   <p><a href="{% url 'test_list' %}">посмотреть другие</a></p>
+	{% else %}
+    	<section class="main">
+    		<div class="container">
+    			<div class="box">
+    				<div class="content">
+    					<div class="questions">
+
+    						<form id="questions" action="" method='post'>
+    							{% csrf_token %}
+    							{% for q in test.questions.all %}
+
+	    							<div class="question {% if q.id == test.questions.all.0.id %}question_active{% endif %}" id="question{{ forloop.counter }}">
+	    								<h1 class="main-title">{{ q.name }}</h1>
+	    								{% with count=forloop.counter %}
+	    								    
+	    								<div class="main-btns">
+	    									{% for a in q.answers.all %}
+		    									<input id="question{{ count }}-{{ forloop.counter }}" name="{{ q.id }}" value="{{ a.name }}" type="radio">
+		    									<label class="main-btn main-btn_test" for="question{{ count }}-{{ forloop.counter }}">{{ a.name }}</label>
+	    									{% endfor %}
+
+	    								</div>
+	    								{% endwith %}
+
+	    							</div>
+    							{% endfor %}
+    							<button type="submit">send</button>
+    						</form>
+    					</div>
+    					<div class="progress">
+    						{% for q in test.questions.all %}
+	    						<div class="progress-scale {% if q.id == test.questions.all.0.id %}progress-scale_active{% endif %}" id="progress-scale{{ forloop.counter }}"></div>
+	    					{% endfor %}
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+	{% endif %}
+
+    	
+{% endblock content %}

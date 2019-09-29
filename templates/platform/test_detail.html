@@ -1,0 +1,32 @@
+{% extends "platform/base_platform.html" %}
+
+{% block title %}
+типа тест {{test.name}}
+{% endblock title %}
+
+{% block content %}
+	<section class="main">
+		<div class="container">
+			<div class="box">
+				<div class="content">
+					<div>
+						<a href="{% url 'add_q' pk=test.pk %}">add question</a>
+						
+					</div>
+					<div>
+						<h1>t: {{test.name}}</h1>
+						{% for q in test.questions.all %}
+						<p>q: {{ q.name }}</p>
+						<div class='ml-5'>
+							{% for a in q.answers.all %}
+							<p>a: {{ a.name }} - {{ a.key }}</p>
+							{% endfor %}
+						</div>
+						{% endfor %}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}

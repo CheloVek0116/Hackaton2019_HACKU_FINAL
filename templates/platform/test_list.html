@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<section class="main">
+		<div class="container">
+			<div class="box">
+				<div class="content">
+					{% for test in tests %}
+					<div>
+						<a href="{{ test.get_absolute_url }}">
+							<p>{{ test.name }}</p>
+							<p>Вопросов: {{ test.questions.all.count }}</p>
+						</a>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}

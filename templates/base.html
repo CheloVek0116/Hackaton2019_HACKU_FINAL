@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}НАДЕНЬКА{% endblock title %}</title>
+</head>
+<body>
+	<header class="header">
+        <div class="container">
+            <div class="content">
+                <small class="header-logo">НАДЕНЬКА</small>
+                <button class="header-close">&times;</button>
+            </div>
+        </div>
+    </header>
+	
+	{% block content %}
+
+	{% endblock content %}
+
+
+
+
+
+	<script src="{% static 'js/jqvery-min.js' %}"></script> 
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
