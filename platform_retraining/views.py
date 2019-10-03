@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View, DetailView, ListView, FormView, CreateView
+from django.contrib.auth import authenticate
 
 from .models import Test, Question, Answer, Respondent_Answer, CustomUser
 from .forms import QuestionForm, TestForm, formset_answer
@@ -79,13 +80,11 @@ class RunTest(View):
 
 class StartTest(View):
     def get(self, request, *args, **kwargs):
-        user = CustomUser.objects.get(id=request.user.id)
-        if user.soul == '':
-            test = Test.objects.get(name='ABC')
-            return render(request, 'platform/test_run.html', context={'test': test})
-        return render(request, 'respondent/profile.html')
+        test = Test.objects.get(name='ABC')
+        return render(request, 'platform/test_run.html', context={'test': test})
 
     def post(self, request, *args, **kwargs):
+        user = authenticate(username='andrew', password='qewr13246-')
         test = Test.objects.get(name='ABC')
         list_id_q = test.questions.values_list('pk', flat=True)
         key_soul = ''
@@ -96,11 +95,11 @@ class StartTest(View):
             answer_key = Answer.objects.get(
                 name=request.POST[str(id_q)]).key
             answer_respondent = Respondent_Answer.objects.create(
-                respondent=request.user, question=question, key=answer_key, name=request.POST[str(id_q)])
+                respondent=user, question=question, key=answer_key, name=request.POST[str(id_q)])
             key_soul += answer_key
 
         print(key_soul)
-        user = CustomUser.objects.get(id=request.user.id)
+        user = CustomUser.objects.get(id=user.id)
         user.soul_key = key_soul
         soul = test_1[key_soul]
         print(soul)

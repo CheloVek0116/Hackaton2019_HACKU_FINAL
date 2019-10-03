@@ -3,7 +3,7 @@ $(document).ready(function(){
   $(".main-btn_test").on('click', function(e){
     $('#progress-scale' + i).toggleClass('progress-scale_active');
     $('#question' + i++).toggleClass('question_active');
-    if(i < 4){
+    if(i < 5){
       $('#progress-scale' + i).toggleClass('progress-scale_active');
       $('#question' + i).toggleClass('question_active');
     } else {
