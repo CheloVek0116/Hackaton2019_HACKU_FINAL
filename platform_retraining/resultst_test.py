@@ -7,7 +7,7 @@ test_1 = {
     'ISFP': ('композитор', 'UI designer, Illustrator'),
     'INFP': ('целитель', 'UX designer, User Researcher'),
     'INTP': ('архитектор', 'Архитектор'),
-    'ESTP': ('дельцы', 'Маркетологи'),
+    'ESTP': ('делец', 'Маркетологи'),
     'ESFP': ('деятель', 'Financial Security'),
     'ENFP': ('чемпион', 'Планировщик ресурсов'),
     'ENTP': ('изобретатель', 'Product designer, Product developer'),

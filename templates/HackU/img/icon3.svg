@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">
+    <defs>
+        <style>
+            .cls-1,.cls-4{fill:#fff}.cls-1{stroke:#707070}.cls-2{clip-path:url(#clip-path)}.cls-3{fill:none}
+        </style>
+        <clipPath id="clip-path">
+            <path id="Rectangle_48" d="M0 0h29v29H0z" class="cls-1" data-name="Rectangle 48" transform="translate(-.593 .394)"/>
+        </clipPath>
+    </defs>
+    <g id="Mask_Group_30" class="cls-2" data-name="Mask Group 30" transform="translate(.593 -.394)">
+        <g id="cast_for_education" transform="translate(.501)">
+            <path id="Path_84" d="M0 0h27.534v29.364H0z" class="cls-3" data-name="Path 84"/>
+            <path id="Path_85" d="M24.195 3.75H3.544A2.381 2.381 0 0 0 1.25 6.2v3.67h2.294V6.2h20.65v17.126h-8.03v2.447h8.031a2.381 2.381 0 0 0 2.294-2.447V6.2a2.381 2.381 0 0 0-2.294-2.45zM1.25 22.1v3.67h3.442A3.557 3.557 0 0 0 1.25 22.1zm0-4.894v2.447a5.938 5.938 0 0 1 5.736 6.117h2.295a8.3 8.3 0 0 0-8.031-8.562zm0-4.894v2.447c5.7 0 10.325 4.931 10.325 11.011h2.295c0-7.436-5.656-13.456-12.62-13.456zm11.472 1.334V16.1l4.015 2.337 4.016-2.337v-2.452l-4.015 2.337zm4.016-6.226l-6.31 3.67 6.31 3.67 6.31-3.67z" class="cls-4" data-name="Path 85" transform="translate(-.103 -.08)"/>
+        </g>
+    </g>
+</svg>

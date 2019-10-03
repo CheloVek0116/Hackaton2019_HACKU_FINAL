@@ -1,20 +1,11 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link href="{% static 'css/reset.css' %}" rel="stylesheet">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
-    <title>HackU</title>
-</head>
-<body>
+{% block content %}
     <header class="header">
         <div class="container">
             <div class="content">
-                <small class="header-logo">HackU</small> <button class="header-close">&times;</button>
+                <small class="header-logo">НАДЕНЬКА</small>
+                <button class="header-close">&times;</button>
             </div>
         </div>
     </header>
@@ -41,19 +32,15 @@
                         Мой психотип - НАСТАВНИК. А твой?<br>
                         Давай сейчас пройдем мааааленький тест.
                     </h2>
-                    <button class="welcome-window-btn">Давай</button>
+                    <a class="welcome-window-btn" href="{% url 'start_test' %}">Давай</a>
                 </div>
             </div>
         </div>
     </section>
-    <script src="{% static 'js/jqvery-min.js' %}"></script> 
-    <script src="{% static 'js/main.js' %}"></script>
-
     <script>
         welcome = document.querySelector("section._style1")
         function welcomee() {
             welcome.style.display = "none";
         }
     </script>
-</body>
-</html>
+{% endblock content %}

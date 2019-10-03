@@ -4,8 +4,10 @@ from django.contrib.auth.models import AbstractUser
 
 
 class CustomUser(AbstractUser):
-    soul_key = models.CharField(max_length=4, verbose_name='ключ от души')
-    soul = models.CharField(max_length=200, verbose_name='Душа)))))))')
+    soul_key = models.CharField(
+        max_length=4, verbose_name='ключ от души', blank=True)
+    soul = models.CharField(
+        max_length=200, verbose_name='Душа)))))))', blank=True)
 
 
 class Test(models.Model):

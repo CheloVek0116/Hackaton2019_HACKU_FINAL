@@ -79,8 +79,11 @@ class RunTest(View):
 
 class StartTest(View):
     def get(self, request, *args, **kwargs):
-        test = Test.objects.get(name='ABC')
-        return render(request, 'platform/test_run.html', context={'test': test})
+        user = CustomUser.objects.get(id=request.user.id)
+        if user.soul == '':
+            test = Test.objects.get(name='ABC')
+            return render(request, 'platform/test_run.html', context={'test': test})
+        return render(request, 'respondent/profile.html')
 
     def post(self, request, *args, **kwargs):
         test = Test.objects.get(name='ABC')
@@ -88,6 +91,8 @@ class StartTest(View):
         key_soul = ''
         for id_q in list_id_q:
             question = Question.objects.get(id=id_q)
+            print(question)
+            print(request.POST)
             answer_key = Answer.objects.get(
                 name=request.POST[str(id_q)]).key
             answer_respondent = Respondent_Answer.objects.create(
@@ -103,4 +108,4 @@ class StartTest(View):
         user.save()
         test.respondents.add(user)
 
-        return render(request, 'platform/test_run.html', context={'test': test})
+        return render(request, 'platform/test_run.html', context={'user': user, 'test': test})

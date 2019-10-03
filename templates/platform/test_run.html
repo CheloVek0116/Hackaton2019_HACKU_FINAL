@@ -2,8 +2,15 @@
 
 {% block content %}
 	{% if user in test.respondents.all %}
-	   вы уже прохходили данный тест {{ user.username }}
-	   <p><a href="{% url 'test_list' %}">посмотреть другие</a></p>
+		<section class="greeting">
+			<div class="container">
+				<div class="content">
+					<h1 class="greeting-title">Приятно познакомиться, {{ user.soul|upper }}!</h1>
+					<p class="greeting-descr">О своем психотипе можешь узнать у себя в личном кабинете.</p>
+					<a class="greeting-btn" href="{{ user.get_absolute_url }}">Личный кабинет</a>
+				</div>
+			</div>
+		</section>
 	{% else %}
     	<section class="main">
     		<div class="container">

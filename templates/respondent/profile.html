@@ -1,0 +1,82 @@
+{% extends "respondent/base_profile.html" %}
+
+{% block profile_content %}
+<section class="profile">
+	<div class="profile-header">
+		<div class="container">
+			<div class="content">
+				<a class="profile-header_link" href="#">Найти лекцию</a>
+				<div class="profile-header_personal">
+					<ul class="profile-header_personal__text">
+						<li>{{ user.first_name}} {{ user.last_name }}</li>
+						<li>Санкт-Петербург</li>
+						<li>бухгалтер</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="profile-main">
+		<div class="container">
+			<div class="content">
+				<small class="profile-main_position">БУХГАЛТЕР</small>
+				<small class="profile-main_status">{{ user.soul }}</small>
+				<h1 class="profile-main_user">{{ user.first_name}} {{ user.last_name }}</h1>
+				<ul class="profile-main_user__characteristics">
+					<li>Санкт-Петербург</li>
+					<li>25 ФЕВРАЛЯ 1994</li>
+					<li>Стаж 3 года</li>
+				</ul>
+				<p class="profile-main_user__descr">
+					Было бы так здорово увидеть тут Вашу характеристику с описанием должностных обязанностей и личными качествами.
+				</p>
+				<button class="profile-main_btn">Оформить резюме</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="profile-plan">
+		<div class="container">
+			<h2>Индивидуальный план развития</h2>
+			<div class="profile-plan_items">
+				{% for plan_item in plans %}
+					<div class="profile-plan_item">{{ plan_item }}</div>
+				{% endfor %}
+				<div class="profile-plan_item">+</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="profile-bottom">
+		<div class="container">
+			<div class="content">
+				<div class="profile-bottom_tasks">
+					<h2>Менеджер ПРОДУКТА</h2>
+					<h3>Профессиональные навыки</h3>
+					<ul>
+						<li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, facilis?</li>
+						<li>Voluptatibus magnam reprehenderit fugit eligendi nisi beatae enim placeat obcaecati.</li>
+						<li>Voluptatem itaque reiciendis illo soluta tempore distinctio nihil! Impedit, minus!</li>
+						<li class="active">Magni doloribus quas voluptate, voluptas ab officiis dicta nesciunt quam?</li>
+						<li>Unde assumenda reiciendis a quod, rem nisi eum quas? Numquam!</li>
+						<li>Obcaecati mollitia asperiores distinctio, in reiciendis quia maxime omnis voluptatem?</li>
+						<li>Pariatur ex harum quidem temporibus dolorum a commodi provident sed?</li>
+						<li>Corporis laborum rem vel est, eius voluptate. Unde, similique blanditiis!</li>
+						<li>Doloribus, eveniet quam eum rerum laborum asperiores eos cumque quisquam.</li>
+						<li>Tempore blanditiis facilis velit doloremque neque nobis asperiores corporis quod?</li>
+						<li>Doloremque deleniti soluta tempora blanditiis, reiciendis maxime pariatur nam eum.</li>
+						<li>Explicabo commodi perferendis aspernatur voluptate ipsam doloribus nam impedit dolorem?</li>
+					</ul>
+				</div>
+				<div class="profile-bottom_ads">
+					<h2>
+						ВСТУПИТЕ В ГРУППУ
+						<small>МЕНЕДЖЕРОВ ПРОДУКТА</small>
+					</h2>
+					<div class="profile-bottom_ads__baner"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock profile_content %}
